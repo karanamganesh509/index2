@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Food Delivery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <header>
+    <h1>QuickBite Food Delivery</h1>
+    <p>Hot and fresh food delivered to your door.</p>
+    <nav>
+      <a href="#menu">Menu</a> |
+      <a href="#order">Place Order</a> |
+      <a href="#about">About</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+    <hr/>
+  </header>
+
+  <main>
+    <!-- MENU -->
+    <section id="menu" aria-labelledby="menu-heading">
+      <h2 id="menu-heading">Menu</h2>
+
+      <article aria-labelledby="starters-heading">
+        <h3 id="starters-heading">Starters</h3>
+        <table summary="Starters menu">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Price (INR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Garlic Bread</td>
+              <td>Toasted bread with garlic butter</td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <td>Veg Samosa</td>
+              <td>Spiced potato in crisp pastry</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>Paneer Tikka</td>
+              <td>Grilled spiced paneer cubes</td>
+              <td>180</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article aria-labelledby="mains-heading">
+        <h3 id="mains-heading">Main Courses</h3>
+        <table summary="Main courses menu">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Price (INR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Margherita Pizza</td>
+              <td>Classic cheese & tomato</td>
+              <td>350</td>
+            </tr>
+            <tr>
+              <td>Butter Chicken</td>
+              <td>Creamy tomato gravy with rice</td>
+              <td>320</td>
+            </tr>
+            <tr>
+              <td>Veg Biryani</td>
+              <td>Aromatic rice with vegetables</td>
+              <td>220</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article aria-labelledby="desserts-heading">
+        <h3 id="desserts-heading">Desserts & Drinks</h3>
+        <ul>
+          <li>Gulab Jamun — 80</li>
+          <li>Chocolate Brownie — 120</li>
+          <li>Fresh Lime Soda — 60</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr/>
+
+    <!-- ORDER FORM -->
+    <section id="order" aria-labelledby="order-heading">
+      <h2 id="order-heading">Place an Order</h2>
+
+      <p>
+        Use the form below to enter your order. (This is plain HTML — to process orders you need to connect the form to a backend.)
+      </p>
+
+      <form method="post" action="#" aria-describedby="order-instructions">
+        <p id="order-instructions">
+          Enter quantities next to items you want. Quantity 0 (or empty) means no order.
+        </p>
+
+        <fieldset>
+          <legend>Customer Information</legend>
+          <label for="cust-name">Full name:</label><br/>
+          <input type="text" id="cust-name" name="customer_name" required placeholder="Your full name"/><br/><br/>
+
+          <label for="cust-phone">Phone number:</label><br/>
+          <input type="tel" id="cust-phone" name="phone" required placeholder="+91-xxxxxxxxxx"/><br/><br/>
+
+          <label for="cust-address">Delivery address:</label><br/>
+          <textarea id="cust-address" name="address" rows="3" required placeholder="House / Street / Landmark / City / PIN"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Order (quantities)</legend>
+
+          <table summary="Order quantities">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price (INR)</th>
+                <th>Quantity</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Garlic Bread</td>
+                <td>120</td>
+                <td><input type="number" name="qty_garlic_bread" min="0" step="1" value="0" /></td>
+                <td><input type="text" name="note_garlic_bread" placeholder="Allergy notes"/></td>
+              </tr>
+              <tr>
+                <td>Veg Samosa</td>
+                <td>50</td>
+                <td><input type="number" name="qty_samosa" min="0" step="1" value="0" /></td>
+                <td><input type="text" name="note_samosa" placeholder="Extra crisp"/></td>
+              </tr>
+              <tr>
+                <td>Paneer Tikka</td>
+                <td>180</td>
+                <td><input type="number" name="qty_paneer" min="0" step="1" value="0" /></td>
+                <td><input type="text" name="note_paneer" placeholder="Less spicy"/></td>
+              </tr>
+              <tr>
+                <td>Margherita Pizza</td>
+                <td>350</td>
+                <td><input type="number" name="qty_pizza" min="0" step="1" value="0" /></td>
+                <td><input type="text" name="note_pizza" placeholder="Extra cheese"/></td>
+              </tr>
+              <tr>
+                <td>Butter Chicken</td>
+                <td>320</td>
+                <td><input type="number" name="qty_butter_chicken" min="0" step="1" value="0" /></td>
+                <td><input type="text" name="note_butter_chicken" placeholder="No onion"/></td>
+              </tr>
+              <tr>
+                <td>Veg Biryani</td>
+                <td>220</td>
+                <td><input type="number" name="qty_biryani" min="0" step="1" value="0" /></td>
+                <td><input type="text" name="note_biryani" placeholder="Raita on side"/></td>
+              </tr>
+              <tr>
+                <td>Gulab Jamun</td>
+                <td>80</td>
+                <td><input type="number" name="qty_gulab" min="0" step="1" value="0" /></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Fresh Lime Soda</td>
+                <td>60</td>
+                <td><input type="number" name="qty_limesoda" min="0" step="1" value="0" /></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </fieldset>
+
+        <fieldset>
+          <legend>Payment & Delivery</legend>
+          <label>
+            <input type="radio" name="payment" value="cash" checked /> Cash on delivery
+          </label><br/>
+          <label>
+            <input type="radio" name="payment" value="upi" /> UPI / Online
+          </label><br/><br/>
+
+          <label for="deliver-time">Preferred delivery time:</label><br/>
+          <select id="deliver-time" name="delivery_time">
+            <option value="asap">As soon as possible</option>
+            <option value="30min">In 30 minutes</option>
+            <option value="1hr">In 1 hour</option>
+            <option value="schedule">Schedule (note in address)</option>
+          </select>
+        </fieldset>
+
+        <p>
+          <button type="submit">Submit Order</button>
+          <button type="reset">Clear Form</button>
+        </p>
+      </form>
+
+      <details>
+        <summary>Developer note: how to make this functional</summary>
+        <ol>
+          <li>Connect form <code>action</code> to a server endpoint that accepts the POST request.</li>
+          <li>On the server compute totals, validate quantities, and send order confirmation via SMS/email.</li>
+          <li>To provide dynamic cart behaviour or price calculation in the browser add JavaScript (not included here by request).</li>
+        </ol>
+      </details>
+    </section>
+
+    <hr/>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About QuickBite</h2>
+      <p>
+        QuickBite is a small local food delivery service focused on fast, friendly delivery and quality ingredients.
+      </p>
+      <p>
+        Opening hours: Monday - Sunday, 10:00 AM — 11:00 PM.
+      </p>
+    </section>
+
+    <hr/>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact & Support</h2>
+
+      <address>
+        QuickBite HQ<br/>
+        12 Food Lane, Sample City, PIN 500001<br/>
+        Phone: +91-98765-43210
+      </address>
+
+      <h3>Feedback</h3>
+      <form method="post" action="#">
+        <label for="fb-email">Your email:</label><br/>
+        <input type="email" id="fb-email" name="fb_email" placeholder="you@example.com" /><br/><br/>
+
+        <label for="fb-message">Message:</label><br/>
+        <textarea id="fb-message" name="fb_message" rows="4" placeholder="How can we improve?"></textarea><br/><br/>
+
+        <button type="submit">Send Feedback</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <hr/>
+    <p>&copy; <time datetime="2025-09-10">2025</time> QuickBite — All rights reserved.</p>
+    <p>
+      <small>Disclaimer: This page contains only HTML and no styling or scripts. For production use, add proper styling (CSS), accessibility testing, and server-side handling.</small>
+    </p>
+  </footer>
+</body>
+</html>
